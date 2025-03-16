@@ -1,23 +1,90 @@
+"use client";
+import { Button } from "@mui/material";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 interface PlateSelectorProps {
-  selectPlate: (index: number) => void;
+  currentSelectedPlate: number;
+  updatedSelectedPlate: (index: number) => void;
 }
 
-function PlateSelector({ selectPlate }: PlateSelectorProps) {
+function PlateSelector({
+  currentSelectedPlate,
+  updatedSelectedPlate,
+}: PlateSelectorProps) {
+  const router = useRouter();
+
+  const setNewSelectedPlate = (index: number) => {
+    updatedSelectedPlate(index - 1);
+    router.push(`/?plato=${index}`);
+  };
+
   return (
     <div className="flex justify-center gap-6">
-      <h2 className="cursor-pointer" onClick={() => selectPlate(0)}>
-        Plato Uno
-      </h2>
-      <p>|</p>
-      <h2 className="cursor-pointer" onClick={() => selectPlate(1)}>
-        Plato Dos
-      </h2>
-      <p>|</p>
-      <h2 className="cursor-pointer" onClick={() => selectPlate(2)}>
-        Plato Tres
-      </h2>
+      <Button
+        onClick={() => setNewSelectedPlate(1)}
+        sx={{
+          backgroundColor:
+            currentSelectedPlate === 0
+              ? "var(--dark-green)"
+              : "var(--white-cream)",
+          color:
+            currentSelectedPlate === 0
+              ? "var(--white-cream)"
+              : "var(--dark-green)",
+        }}
+        variant="outlined"
+      >
+        One
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{
+          backgroundColor:
+            currentSelectedPlate === 1
+              ? "var(--dark-green)"
+              : "var(--white-cream)",
+          color:
+            currentSelectedPlate === 1
+              ? "var(--white-cream)"
+              : "var(--dark-green)",
+        }}
+        onClick={() => setNewSelectedPlate(2)}
+      >
+        Two
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{
+          backgroundColor:
+            currentSelectedPlate === 2
+              ? "var(--dark-green)"
+              : "var(--white-cream)",
+          color:
+            currentSelectedPlate === 2
+              ? "var(--white-cream)"
+              : "var(--dark-green)",
+        }}
+        onClick={() => setNewSelectedPlate(3)}
+      >
+        Three
+      </Button>
+      <Button
+        variant="outlined"
+        sx={{
+          backgroundColor:
+            currentSelectedPlate === 3
+              ? "var(--dark-green)"
+              : "var(--white-cream)",
+          color:
+            currentSelectedPlate === 3
+              ? "var(--white-cream)"
+              : "var(--dark-green)",
+        }}
+        onClick={() => setNewSelectedPlate(4)}
+      >
+        Four
+      </Button>
     </div>
   );
 }
