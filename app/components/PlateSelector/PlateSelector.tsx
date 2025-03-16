@@ -20,7 +20,7 @@ function PlateSelector({
   };
 
   return (
-    <div className="flex justify-center gap-6">
+    <div className="flex justify-center md:gap-6 gap-1">
       <Button
         onClick={() => setNewSelectedPlate(1)}
         sx={{
@@ -35,7 +35,8 @@ function PlateSelector({
         }}
         variant="outlined"
       >
-        One
+        <span className="block md:hidden">Uno</span>
+        <span className="hidden md:block">Plato Uno</span>
       </Button>
       <Button
         variant="outlined"
@@ -51,10 +52,12 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(2)}
       >
-        Two
+        <span className="block md:hidden">Dos</span>
+        <span className="hidden md:block">Plato Dos</span>
       </Button>
       <Button
         variant="outlined"
+        className="con"
         sx={{
           backgroundColor:
             currentSelectedPlate === 2
@@ -67,7 +70,8 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(3)}
       >
-        Three
+        <span className="block md:hidden">Tres</span>
+        <span className="hidden md:block">Plato Tres</span>
       </Button>
       <Button
         variant="outlined"
@@ -83,7 +87,8 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(4)}
       >
-        Four
+        <span className="block md:hidden">Cuatro</span>
+        <span className="hidden md:block">Plato Cuatro</span>
       </Button>
     </div>
   );
