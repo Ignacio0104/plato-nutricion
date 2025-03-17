@@ -2,6 +2,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface PlateSelectorProps {
   currentSelectedPlate: number;
@@ -16,11 +17,11 @@ function PlateSelector({
 
   const setNewSelectedPlate = (index: number) => {
     updatedSelectedPlate(index - 1);
-    router.push(`/?plato=${index}`);
+    router.replace(`/?plato=${index}`);
   };
 
   return (
-    <div className="flex justify-center md:gap-6 gap-1">
+    <div className="flex justify-center md:gap-6 gap-1 font">
       <Button
         onClick={() => setNewSelectedPlate(1)}
         sx={{
@@ -35,8 +36,18 @@ function PlateSelector({
         }}
         variant="outlined"
       >
-        <span className="block md:hidden">Uno</span>
-        <span className="hidden md:block">Plato Uno</span>
+        <span className="block md:hidden flex font-coralRegular ">
+          Uno
+          <Image
+            src="/resources/images/plate.png"
+            alt="Icono Plato"
+            width={20}
+            height={20}
+            priority
+            className="ml-2"
+          ></Image>
+        </span>
+        <span className="hidden md:block font-coralRegular ">Plato Uno</span>
       </Button>
       <Button
         variant="outlined"
@@ -52,8 +63,18 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(2)}
       >
-        <span className="block md:hidden">Dos</span>
-        <span className="hidden md:block">Plato Dos</span>
+        <span className="block md:hidden flex font-coralRegular ">
+          Dos
+          <Image
+            src="/resources/images/plate.png"
+            alt="Icono Plato"
+            width={20}
+            height={20}
+            priority
+            className="ml-2"
+          ></Image>
+        </span>
+        <span className="hidden md:block font-coralRegular ">Plato Dos</span>
       </Button>
       <Button
         variant="outlined"
@@ -70,8 +91,18 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(3)}
       >
-        <span className="block md:hidden">Tres</span>
-        <span className="hidden md:block">Plato Tres</span>
+        <span className="block md:hidden flex font-coralRegular ">
+          Tres
+          <Image
+            src="/resources/images/plate.png"
+            alt="Icono Plato"
+            width={20}
+            height={20}
+            priority
+            className="ml-2"
+          ></Image>
+        </span>
+        <span className="hidden md:block font-coralRegular ">Plato Tres</span>
       </Button>
       <Button
         variant="outlined"
@@ -87,8 +118,18 @@ function PlateSelector({
         }}
         onClick={() => setNewSelectedPlate(4)}
       >
-        <span className="block md:hidden">Cuatro</span>
-        <span className="hidden md:block">Plato Cuatro</span>
+        <span className="block md:hidden flex font-coralRegular ">
+          Cuatro
+          <Image
+            src="/resources/images/plate.png"
+            alt="Icono Plato"
+            width={20}
+            height={20}
+            priority
+            className="ml-2"
+          ></Image>
+        </span>
+        <span className="hidden md:block font-coralRegular ">Plato Cuatro</span>
       </Button>
     </div>
   );
