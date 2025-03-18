@@ -6,6 +6,7 @@ import { plates } from "@/app/utils/platesInfo";
 import PlateComponent from "../Plate/PlateComponent";
 import Image from "next/image";
 import Footer from "../Footer/Footer";
+import Link from "next/link";
 
 export default function MainLayout() {
   const searchParams = useSearchParams();
@@ -29,18 +30,20 @@ export default function MainLayout() {
   }, [searchParams]);
 
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center pt-6">
+    <div className="w-full h-full flex flex-col items-center sm:justify-center pt-6">
       {plateSelected !== undefined && (
         <>
           <div className="hidden sm:block absolute left-8 top-6 cursor-pointer">
-            <Image
-              src="/resources/images/anto-logo-white.png"
-              alt="Icono Plato"
-              width={80}
-              height={80}
-              priority
-              className="ml-2"
-            ></Image>
+            <Link href="https://strangio-nutrition.vercel.app/" target="_blank">
+              <Image
+                src="/resources/images/anto-logo-white.png"
+                alt="Icono Plato"
+                width={80}
+                height={80}
+                priority
+                className="ml-2"
+              ></Image>
+            </Link>
           </div>
           <PlateSelector
             currentSelectedPlate={plateSelected}
@@ -48,18 +51,23 @@ export default function MainLayout() {
           />
           <PlateComponent plate={plates[plateSelected]} />
           <div className="hidden sm:block absolute right-10 bottom-6 cursor-pointer">
-            <Image
-              src="/resources/images/instagram_icon.png"
-              alt="Icono Plato"
-              width={80}
-              height={80}
-              priority
-              className="ml-2"
-            ></Image>
+            <Link
+              href="https://www.instagram.com/antostrangio.nutricion"
+              target="_blank"
+            >
+              <Image
+                src="/resources/images/instagram_icon.png"
+                alt="Icono Plato"
+                width={80}
+                height={80}
+                priority
+                className="ml-2"
+              ></Image>
+            </Link>
           </div>
           <Footer />
         </>
       )}
-    </main>
+    </div>
   );
 }

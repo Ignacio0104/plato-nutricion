@@ -15,7 +15,7 @@ export default function PlateComponent({ plate }: PlateComponentProps) {
         <div className="mt-auto">
           <Image
             src="/resources/images/frutas.png"
-            alt="Plato"
+            alt="Frutas"
             width={250}
             height={200}
             priority
@@ -26,7 +26,7 @@ export default function PlateComponent({ plate }: PlateComponentProps) {
           <Image
             src={plate.photo}
             alt="Plato"
-            width={500}
+            width={400}
             height={500}
             priority
             className="block lg:hidden"
@@ -43,7 +43,7 @@ export default function PlateComponent({ plate }: PlateComponentProps) {
         <div className="">
           <Image
             src="/resources/images/grasas.png"
-            alt="Plato"
+            alt="Grasas"
             width={250}
             height={180}
             priority
@@ -53,7 +53,7 @@ export default function PlateComponent({ plate }: PlateComponentProps) {
         <div className="block md:hidden flex justify-between">
           <Image
             src="/resources/images/frutas.png"
-            alt="Plato"
+            alt="Frutas"
             width={150}
             height={150}
             priority
@@ -61,7 +61,7 @@ export default function PlateComponent({ plate }: PlateComponentProps) {
           />
           <Image
             src="/resources/images/grasas.png"
-            alt="Plato"
+            alt="Grasas"
             width={150}
             height={150}
             priority
